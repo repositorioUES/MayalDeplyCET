@@ -196,7 +196,6 @@ class SuperUserCheck(UserPassesTestMixin, View):
 
 
 # Create your views here.
-@permission_required('is_superuser')
 def index(request):
     context = {}
     return render(request, 'administrador/base.html', context)
