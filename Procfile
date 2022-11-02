@@ -1,0 +1,1 @@
+web: gunicorn MayalProject.wsgi --log-file -
