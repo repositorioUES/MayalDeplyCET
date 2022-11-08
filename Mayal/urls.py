@@ -54,6 +54,7 @@ urlpatterns = [
     path('administrador/crearProducto', CrearProducto.as_view(), name="crear_producto"),
     path('administrador/modificarProducto/<int:pk>', ModificarProducto.as_view(), name='modificar_producto'),
     path('administrador/borrarProducto/<id>',borrarProducto, name='borrar_producto'),
+    path('administrador/detalleProducto/<int:pk>/',detalleProducto, name='detalle_producto'),
 
     path('administrador/agregarImagenes/<int:pk>/',AgregarImagenes, name='agregar_imagenes'),
     path('administrador/guardarImagenes/<int:pk>/',GuardarImagenes, name='guardar_imagenes'),
@@ -61,6 +62,7 @@ urlpatterns = [
 
     #url para mostrar mapa de seguimiento
     path('administrador/seguimiento/', seguimiento, name='seguimiento_producto'),  
+    path('store/seguimientoEntrega/', tracking, name='seguimiento_entrega'),
 
     path('store/preguntasFrecuentes/', preguntas, name='faq'),
     path('store/terminosVS/', terminos, name='terminos'),
@@ -74,7 +76,6 @@ urlpatterns = [
 	path('', store, name="store"),
 	path('cart/', cart, name="cart"),
 	path('checkout/', checkout, name="checkout"),
-
 	path('update_item/', updateItem, name="update_item"),
 	path('process_order/', processOrder, name="process_order"),
 
@@ -85,6 +86,8 @@ urlpatterns = [
     path('administrador/listarUsuario', listarUsuario, name="listarUsuario"),
     path('administrador/editarUsuario/<id>/', editarUsuario, name="editarUsuario"),
     path('administrador/eliminarUsuario/<id>/', eliminarUsuario, name="eliminarUsuario"),
+    path('administrador/listarOrdenes', listarOrdenes, name="listarOrdenes"),
+    path('administrador/listarOrdenesProductos/<id>/', listarOrdenesProductos, name="listarOrdenesProductos"),
 ]
 
 # Para mostrar las imagenes guardadas -----------------------------------------------------------------------------------------
